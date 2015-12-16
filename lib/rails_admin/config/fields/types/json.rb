@@ -15,7 +15,7 @@ module RailsAdmin
 
           def parse_value(value)
             begin
-              value.present? ? JSON.parse(value) : nil
+              value.present? ? JSON.parse(value.to_json) : nil
             rescue JSON::ParserError
               nil
             end
